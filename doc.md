@@ -126,7 +126,7 @@ As a side note: TorchCraft replayer (replayer.cpp) is a C++ library with Lua bin
 
 ## References
 
-1. Andrew Silva has also documented his experience with setting up StarData, with well elaborated walktroughs: https://github.com/andrewsilva9/stardata_analysis.
+1. Andrew Silva has also documented his experience with setting up StarData, with well elaborated walk-throughs: https://github.com/andrewsilva9/stardata_analysis.
 
 2. StarData dataset: https://github.com/TorchCraft/StarData
 
