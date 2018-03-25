@@ -21,22 +21,21 @@ In .bash_profile, add the following line:
 
 	. <path to torch-activate>
 
-
-	Example:
+Example:
 
 	. /Users/user/torch/install/bin/torch-activate
 
 
-iii) To check that this works, try run `th` to launch torch from anywhere. Torch should launch.
+iii) To check that this works, try run `th` to launch torch. This should work from any folder you currently reside in.
 
 
 ### 2. Install Dependencies.
 
-i) zeromq (I used homebrew to install this).
+i) zeromq (I used homebrew for installing this one).
 
 	brew install zeromq
 
-ii) zstd
+ii) zstd (Getting it using pip gave me issues, so I got it directly from here. The 64-bits v1.3.4 version worked on mine).
 	
 	git clone https://github.com/facebook/zstd
 	cd zstd
@@ -51,7 +50,7 @@ ii) zstd
 	pip install .
 
 
-### Some Troubleshooting Errors:
+#### Some Troubleshooting Errors:
 
 1. If you get a fatal error that a particular header file (.h) is not found, for example, `fatal error: 'zmq.h'` file not found, this could either be due to:
 
@@ -67,11 +66,11 @@ The data is hosted on Amazon S3. Here's a suggestion of steps to download the da
 
 ### 1. Create an Amazon S3 account:
 
-i. Go to: https://console.aws.amazon.com/iam/home?#security_credential . This requires setting a new account, and entering address information, and billing information. There is a Free Tier account with limits on S3 storage (5GB) and monthly data transfer out (15GB).
+i. Go to: https://console.aws.amazon.com/iam/home to set up a new account. There is a Free Tier account with limits on S3 storage (5GB) and monthly data transfer out (15GB).
 
 ii. Lookup access key and secret access key in your AWS account -> your name -> My Security Credentials.
 
-iii. Set credentials: run 'aws configure' and specify your access key, secret access key, and region from step ii. Example for region: mine was us-east-1.
+iii. Set credentials: run `aws configure` and specify your access key, secret access key, and region from step ii. For example, my region was set to `us-east-1`.
 
 
 ### 2. Install the AWS command line interface
@@ -100,9 +99,11 @@ As an example:
 
 `./extract_stats /Users/user/Desktop/StarCode/replay_data 0`
 
-Troubleshooting:
+#### Some Troubleshooting:
 
-If you get an error "Need two arguments, source file path and which fold" and were wondering what "fold" refers to, it means folder number.
+1. If you get an error "Need two arguments, source file path and which fold" and were wondering what "fold" refers to, it means folder number.
+
+2. Running extract_stats gives an error: `libc++abi.dylib: terminating with uncaught exception of type std::runtime_error: Corrupted replay: invalid map size`, which I've not been able to solve as of now. The developers (cite)[https://github.com/TorchCraft/StarData/issues/3] a version mismatch being the most likely reason. However, since we won't be using the extract_stats file, but the Python script below which works, I've put debugging this aside.
 
 
 ## A First Python Script 
