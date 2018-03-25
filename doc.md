@@ -55,7 +55,7 @@ ii) zstd (Installing it using pip gave me issues, so I got it directly from here
 1. If you get a fatal error that a particular header file (.h) is not found, for example, `fatal error: 'zmq.h'` file not found, this could either be due to:
 
 	i)  You haven't installed that dependency yet, 
-	
+
 	ii) Python has trouble locating the file (possibly need to add the filepath to .bash_profile).
 
 
@@ -103,7 +103,7 @@ As an example:
 
 1. If you get an error `Need two arguments, source file path and which fold` and were wondering what "fold" refers to, it means folder number.
 
-2. Running extract_stats gives an error: `libc++abi.dylib: terminating with uncaught exception of type std::runtime_error: Corrupted replay: invalid map size`, which I've not been able to solve as of now. The developers (cite)[https://github.com/TorchCraft/StarData/issues/3] a version mismatch being the most likely reason. However, since we won't be using the extract_stats file, but the Python script below which works, I've put debugging this aside.
+2. Running extract_stats gives an error: `libc++abi.dylib: terminating with uncaught exception of type std::runtime_error: Corrupted replay: invalid map size`, which I've not been able to solve as of now. The developers [cite](https://github.com/TorchCraft/StarData/issues/3) a version mismatch being the most likely reason. However, since we won't be using the extract_stats file, but the Python script below which works, I've put debugging this aside.
 
 
 ## A First Python Script 
