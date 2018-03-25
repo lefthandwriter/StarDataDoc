@@ -1,4 +1,4 @@
-# Getting Started with StarData with Python
+# Getting Started with StarData in Python
 This note might be helpful if you're wanting to make use of the StarData dumped_replays data using Python.
 
 
@@ -9,63 +9,55 @@ Note: This was tested on a Mac OS X.
 
 i) Note: in a terminal, run the commands WITHOUT sudo:
 
-	`git clone https://github.com/torch/distro.git ~/torch --recursive`
-
-	`cd ~/torch; bash install-deps;`
-	
-	`./install.sh`
+	git clone https://github.com/torch/distro.git ~/torch --recursive
+	cd ~/torch; bash install-deps;
+	./install.sh
 
 ii) Add Torch environment variable in .bash_profile:
 
-	`vi ~/.bash_profile`
+	vi ~/.bash_profile
 
-	In .bash_profile, add the following line:
+In .bash_profile, add the following line:
 
-	`. <path to torch-activate>`
+	. <path to torch-activate>
 
 
 	Example:
 
-	`. /Users/user/torch/install/bin/torch-activate`
+	. /Users/user/torch/install/bin/torch-activate
 
 
-iii) To check that this works, try call 'th' to launch torch from anywhere. Torch should launch.
-	'th'
+iii) To check that this works, try run `th` to launch torch from anywhere. Torch should launch.
 
 
 ### 2. Install Dependencies.
 
 i) zeromq (I used homebrew to install this).
 
-	`brew install zeromq`
+	brew install zeromq
 
 ii) zstd
 	
-	`git clone https://github.com/facebook/zstd`
-
-	`cd zstd`
-	
-	`make install`
+	git clone https://github.com/facebook/zstd
+	cd zstd
+	make install
 
 
 ### 3. Install TorchCraft.
 
-	`git clone https://github.com/TorchCraft/StarData`
-	
-	`git submodule update --init`
-	
-	`cd TorchCraft`
-	
-	`pip install .`
+	git clone https://github.com/TorchCraft/StarData
+	git submodule update --init
+	cd TorchCraft
+	pip install .
 
 
 ### Some Troubleshooting Errors:
 
 1. If you get a fatal error that a particular header file (.h) is not found, for example, `fatal error: 'zmq.h'` file not found, this could either be due to:
 
-	i)  You haven't installed that dependency yet, 
+i)  You haven't installed that dependency yet, 
 
-	ii) Python has trouble locating the file (possibly need to add the filepath to .bash_profile).
+ii) Python has trouble locating the file (possibly need to add the filepath to .bash_profile).
 
 
 
@@ -114,14 +106,14 @@ If you get an error "Need two arguments, source file path and which fold" and we
 
 
 ## A First Python Script 
-'''from torchcraft import replayer
-rep = replayer.load("replay_data/0/bwrep_0b8dp.tcr")
-for i in range(len(rep)):
-	frame = rep.getFrame(i)
-	print("On frame " + str(i))
-	for team in frame.units:
-		for u in frame.units[team]:
-			print(u.id, u.x, u.y)'''
+	from torchcraft import replayer
+	rep = replayer.load("replay_data/0/bwrep_0b8dp.tcr")
+	for i in range(len(rep)):
+		frame = rep.getFrame(i)
+		print("On frame " + str(i))
+		for team in frame.units:
+			for u in frame.units[team]:
+				print(u.id, u.x, u.y)
 
 Since we are working with the replay data and using Python, the script relevant to this use case is pyreplayer.cpp. Relevant files for reference:
 
