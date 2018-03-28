@@ -124,13 +124,13 @@ Since we are working with the replay data and using Python, the script relevant 
 As a side note: TorchCraft replayer (replayer.cpp) is a C++ library with Lua bindings. The Python wrapper pyreplayer.cpp uses pybind to create Python bindings of this C++ library. (As an aside, pybind was started by a [Professor at EPFL](http://rgl.epfl.ch/people/wjakob).
 
 
-## References
+## Links
 
-1. Andrew Silva has also documented his experience with setting up StarData, with well elaborated walk-throughs: https://github.com/andrewsilva9/stardata_analysis.
+1. StarData dataset: https://github.com/TorchCraft/StarData
 
-2. StarData dataset: https://github.com/TorchCraft/StarData
+2. TorchCraft: https://github.com/TorchCraft/TorchCraft
 
-3. TorchCraft: https://github.com/TorchCraft/TorchCraft
+3. Andrew Silva has also documented his experience with setting up StarData, with well elaborated walk-throughs: https://github.com/andrewsilva9/stardata_analysis.
 
 
 
